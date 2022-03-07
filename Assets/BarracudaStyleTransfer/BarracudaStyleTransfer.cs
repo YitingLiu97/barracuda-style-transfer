@@ -33,7 +33,7 @@ public class BarracudaStyleTransfer : MonoBehaviour
     public class InternalStyleTransferSetup
     {
         public WorkerFactory.Type workerType = WorkerFactory.Type.Compute;
-        [HideInInspector] public NNModel[] nnModels;
+       /* [HideInInspector] */public NNModel[] nnModels;
         [HideInInspector] public Vector4 postNetworkColorBias;
         public bool forceBilinearUpsample2DInModel = true;
         public ComputeInfo.ChannelsOrder channelsOrder = ComputeInfo.ChannelsOrder.NCHW;
@@ -181,6 +181,7 @@ public class BarracudaStyleTransfer : MonoBehaviour
         fpsUpsampleText = GameObject.Find("Framerate Upsample Display").GetComponent<Text>();
 
         // Load assets from Resources folder
+        // here you add new models 
         internalSetup.nnModels = new NNModel[]
         {
             Resources.Load<NNModel>("adele_2"),
